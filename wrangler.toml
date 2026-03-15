@@ -24,7 +24,7 @@ branches = ["main", "master"] # matches the main or master branch
 maxVersions = 20             # keep everything younger than 90 days, (no limit on number of versions)
 
 [[rules]]                # All other projects main branches
-projects = "Time-synced-lyrics"          # can be omitted: matches all projects
+projects = "time-synced-lyrics"          # can be omitted: matches all projects
 branches = ["main", "master"] # matches the main or master branch
 maxVersions = 20             # keep everything younger than 90 days, (no limit on number of versions)
    
