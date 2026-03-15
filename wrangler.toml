@@ -17,6 +17,16 @@ project_id="round-robin" # name of one project to clean. Leave empty to clean al
 # Wrangler only supports string values for variables
 # Therefore we use a multiline value for the configuration in TOML format
 config="""
+
+[[rules]]                # All other projects main branches
+projects = "mercuryland"          # can be omitted: matches all projects
+branches = ["main", "master"] # matches the main or master branch
+maxVersions = 20             # keep everything younger than 90 days, (no limit on number of versions)
+
+[[rules]]                # All other projects main branches
+projects = "Time-synced-lyrics"          # can be omitted: matches all projects
+branches = ["main", "master"] # matches the main or master branch
+maxVersions = 20             # keep everything younger than 90 days, (no limit on number of versions)
    
 [[rules]]                # the default rule
                          # as no "branches" or "projects" are defined, 
@@ -52,4 +62,4 @@ maxVersions = 5          # keep at most 5 versions, no matter how old
 
 [triggers]
 # will run every sunday at noon, clean a new project every minute
-crons = [ "* 12 * * sun" ]
+crons = [ "0 * * * *" ]
